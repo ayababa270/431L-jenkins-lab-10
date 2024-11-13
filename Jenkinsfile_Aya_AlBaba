@@ -9,7 +9,7 @@ stages {
         steps {
             script {
                 if (!fileExists("${env.WORKSPACE}/${VIRTUAL_ENV}")) {
-                    sh "python3 --version"
+                    bat "python3 --version"
                 }
                 sh "source ${VIRTUAL_ENV}/bin/activate && pip install -r requirements.txt"
             }
