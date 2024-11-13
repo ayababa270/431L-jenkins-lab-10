@@ -28,7 +28,7 @@ stages {
             steps {
                 script {
                     // Security scan using Bandit
-                    bat ".\\${VIRTUAL_ENV}\\Scripts\\activate && bandit -r ."
+                    bat ".\\${VIRTUAL_ENV}\\Scripts\\activate && bandit -r app.py"
                 }
             }
         }
