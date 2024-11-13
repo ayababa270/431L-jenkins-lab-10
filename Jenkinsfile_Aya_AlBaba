@@ -53,11 +53,7 @@ stages {
         steps {
                 script {
                     // For local deployment, copy files to the desired directory
-                    bat "copy .\\app.py ${DEPLOY_DIR}\\app.py"  // Copy the app.py file to the deployment directory
-
-                    // Optionally, if you need to move other files, you can add more copy commands.
-                    // Example: Copy other necessary files (like a config file)
-                    // bat "copy .\\config.yaml ${DEPLOY_DIR}\\config.yaml"
+                    bat 'copy .\\app.py "${DEPLOY_DIR}\\app.py"'  // Copy the app.py file to the deployment directory
 
                     // Run the app locally by executing the script
                     bat "python3 ${DEPLOY_DIR}\\app.py"  // Start the app in the deployment directory
