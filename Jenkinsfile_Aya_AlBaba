@@ -53,10 +53,10 @@ stages {
         steps {
                 script {
                     // For local deployment, copy files to the desired directory
-                    bat 'copy .\\app.py "${DEPLOY_DIR}\\app.py"'  // Copy the app.py file to the deployment directory
+                    bat 'copy .\\app.py ".\\deployment dir\\app.py"'  // Copy the app.py file to the deployment directory
 
                     // Run the app locally by executing the script
-                    bat "python3 ${DEPLOY_DIR}\\app.py"  // Start the app in the deployment directory
+                    bat "python3 .\\deployment dir\\app.py"  // Start the app in the deployment directory
                 }
             }
     }
