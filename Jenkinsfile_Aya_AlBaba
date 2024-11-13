@@ -22,6 +22,14 @@ stages {
             }
         }
     }
+    stage('Security Scan') {
+            steps {
+                script {
+                    // Security scan using Bandit
+                    bat ".\\${VIRTUAL_ENV}\\Scripts\\activate && bandit -r ."
+                }
+            }
+        }
     stage('Test') {
         steps {
             script {
@@ -29,6 +37,16 @@ stages {
             }
         }
     }
+    stage('Coverage') {
+            steps {
+                script {
+                    //run tests with coverage
+                    bat ".\\${VIRTUAL_ENV}\\Scripts\\activate && coverage run -m pytest"
+                    bat ".\\${VIRTUAL_ENV}\\Scripts\\activate && coverage report"
+                    bat ".\\${VIRTUAL_ENV}\\Scripts\\activate && coverage html" // Generates an HTML report
+                }
+            }
+        }
     stage('Deploy') {
         steps {
             script {
