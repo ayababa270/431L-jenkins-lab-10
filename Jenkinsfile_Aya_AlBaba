@@ -3,7 +3,7 @@ pipeline {
 agent any
 environment {
     VIRTUAL_ENV = 'venv'
-    DEPLOY_DIR = "C:\\Users\\First Tek\\Desktop\\fall 2024\\eece 435L\\Lab10\\deployment dir"
+    DEPLOY_DIR = ".\\deployment dir"
     PYTHONIOENCODING = 'utf-8' 
 }
 stages {
