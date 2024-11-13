@@ -56,7 +56,7 @@ stages {
                     bat 'copy .\\app.py ".\\deployment dir\\app.py"'  // Copy the app.py file to the deployment directory
 
                     // Run the app locally by executing the script
-                    bat "python3 .\\deployment dir\\app.py"  // Start the app in the deployment directory
+                    bat 'python3 ".\\deployment dir\\app.py"'  // Start the app in the deployment directory
                 }
             }
     }
